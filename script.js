@@ -1,10 +1,21 @@
 
 window.onload = function(){
-  const wordList = ['against', 'too', 'help', 'stop', 'who', 'caught'];
-  var chosenWord = wordList[getRandomInt(3)];
+  const wordList = ['against', 'too', 'help', 'stop', 'who', 
+                    'caught', "team", "food", "California", "Uganda", 
+                    "town", "made", "how", "claim", "fortune"];
+  typingPrompt = "";
+  typingPromptList = [];
+  chosenWord = wordList[getRandomInt(3)];
   const chosenWordElement = document.getElementById("displayWord");
 
-  console.log(chosenWord)
+  for (let i = 0; i < 5; i++){
+    chosenWord = wordList[getRandomInt(3)];
+
+    typingPromptList.push(chosenWord);
+    
+    typingPrompt = typingPrompt + chosenWord;
+
+  }
 
   document.getElementById('displayWord').innerHTML = chosenWord;
 
