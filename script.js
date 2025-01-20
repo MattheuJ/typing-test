@@ -1,36 +1,29 @@
 
 window.onload = function(){
-  wordList = ['against', 'too', 'help']
-  chosenWord = wordList[getRandomInt(3)]
+  const wordList = ['against', 'too', 'help', 'stop', 'who', 'caught'];
+  var chosenWord = wordList[getRandomInt(3)];
+  const chosenWordElement = document.getElementById("displayWord");
 
   console.log(chosenWord)
 
   document.getElementById('displayWord').innerHTML = chosenWord;
 
-  wordByLetter = []
+  const wordInput = document.getElementById("wordInput");
 
-  for (let i = 0; i < chosenWord.length; i++){
-    wordByLetter.push(chosenWord[i])
-  }
-
-  console.log(wordByLetter)
-
-  document.addEventListener("keydown", event => {
-    if (event.key == chosenWord[i]){
-      
-    };
-  
+  wordInput.addEventListener("keypress", function(event){
+    if (event.key == " ") {
+      userInput = event.target.value;
+      console.log(userInput);
+      if (userInput == chosenWord) {
+        chosenWordElement.style.color = "green";
+      } else {
+        chosenWordElement.style.color = "red";
+      }
+    }
   });
 
 };
 
-// document.addEventListener("keydown", event => {
-//   console.log(`Key down = ${event.key}`);
-// });
-
-// document.addEventListener("keyup", event => {
-//   console.log(`key up = ${event.key}`);
-// });
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
