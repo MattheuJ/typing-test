@@ -16,7 +16,9 @@ window.onload = function(){
   console.log(wordByLetter)
 
   document.addEventListener("keydown", event => {
-  // event.key
+    if (event.key == chosenWord[i]){
+      
+    };
   
   });
 
