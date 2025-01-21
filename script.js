@@ -7,11 +7,11 @@ window.onload = function(){
                     "Florida", "club", "music", "time", "hack"];
   typingPrompt = "";
   typingPromptList = [];
-  chosenWord = wordList[getRandomInt(3)];
-  const chosenWordElement = document.getElementById("displayWord");
 
-  for (let i = 0; i < 5; i++){
+  for (let i = 0; i < 10; i++){
     chosenWord = wordList[getRandomInt(20)];
+
+    console.log(chosenWord)
 
     typingPromptList.push(chosenWord);
 
@@ -20,29 +20,31 @@ window.onload = function(){
     newParagraph.textContent = chosenWord;
 
     document.body.appendChild(newParagraph);
-    
-    if(i == 0) {
-      typingPrompt = typingPrompt + chosenWord;
-    } else {
-      typingPrompt = typingPrompt + ` ${chosenWord}`
-      }
+
+    newParagraph.id = `word ${i}`;
+
+    newParagraph.classList.add("word");
 
   }
 
-  console.log(typingPrompt)
-
-  document.getElementById('displayWord').innerHTML = typingPrompt;
-
   const wordInput = document.getElementById("wordInput");
+  counter = 0;
+  currentWordElement = document.getElementById(`word ${counter}`);
 
   wordInput.addEventListener("keypress", function(event){
     if (event.key == " ") {
       userInput = event.target.value;
-      console.log(userInput);
-      if (userInput == chosenWord) {
-        chosenWordElement.style.color = "green";
+      console.log(`${userInput} (user)`);
+
+      if (userInput == typingPromptList[counter]) {
+        currentWordElement.style.color = "green";
+        counter = counter + 1
+        currentWordElement = document.getElementById(`word ${counter}`);
+        
       } else {
-        chosenWordElement.style.color = "red";
+        currentWordElement.style.color = "red";
+        counter = counter + 1
+        currentWordElement = document.getElementById(`word ${counter}`);
       }
     }
   });
