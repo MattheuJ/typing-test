@@ -2,22 +2,36 @@
 window.onload = function(){
   const wordList = ['against', 'too', 'help', 'stop', 'who', 
                     'caught', "team", "food", "California", "Uganda", 
-                    "town", "made", "how", "claim", "fortune"];
+                    "town", "made", "how", "claim", "fortune",
+                    "cow", "dog", "wow", "city", "state",
+                    "Florida", "club", "music", "time", "hack"];
   typingPrompt = "";
   typingPromptList = [];
   chosenWord = wordList[getRandomInt(3)];
   const chosenWordElement = document.getElementById("displayWord");
 
   for (let i = 0; i < 5; i++){
-    chosenWord = wordList[getRandomInt(3)];
+    chosenWord = wordList[getRandomInt(20)];
 
     typingPromptList.push(chosenWord);
+
+    newParagraph = document.createElement("p");
+
+    newParagraph.textContent = chosenWord;
+
+    document.body.appendChild(newParagraph);
     
-    typingPrompt = typingPrompt + chosenWord;
+    if(i == 0) {
+      typingPrompt = typingPrompt + chosenWord;
+    } else {
+      typingPrompt = typingPrompt + ` ${chosenWord}`
+      }
 
   }
 
-  document.getElementById('displayWord').innerHTML = chosenWord;
+  console.log(typingPrompt)
+
+  document.getElementById('displayWord').innerHTML = typingPrompt;
 
   const wordInput = document.getElementById("wordInput");
 
