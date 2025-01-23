@@ -11,6 +11,9 @@ window.onload = function(){
                     "research", "survive", "test", "internet", "use",
                     "build", "mouth", "other", "who", "final"];
   typingPromptList = [];
+  mainContainer = document.getElementById("mainContainer");
+  const wordForm = document.getElementById("wordForm");
+  const wordInput = document.getElementById("wordInput");
 
   for (let i = 0; i < 20; i++){
     chosenWord = wordList[getRandomInt(50)];
@@ -23,16 +26,14 @@ window.onload = function(){
 
     newParagraph.textContent = chosenWord;
 
-    document.body.appendChild(newParagraph);
+    mainContainer.insertBefore(newParagraph, wordForm);
 
     newParagraph.id = `word ${i}`;
 
     newParagraph.classList.add("word");
 
-  }
+  };
 
-  const wordInput = document.getElementById("wordInput");
-  const wordForm = document.getElementById("wordForm");
   counter = 0;
   currentWordElement = document.getElementById(`word ${counter}`);
 
@@ -60,7 +61,7 @@ window.onload = function(){
         currentWordElement = document.getElementById(`word ${counter}`);
       }
 
-    }
+    };
   });
 
 };

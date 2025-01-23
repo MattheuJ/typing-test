@@ -11,4 +11,12 @@ body {
     -ms-user-select: none;
     user-select: none;
     color: whitesmoke;
+    display: inline-flex;
+    padding: 50px;
+}
+
+#mainContainer{
+    text-align: center;
+    width: 200x;
+    height: 100px;
 }
