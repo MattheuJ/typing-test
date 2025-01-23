@@ -12,7 +12,7 @@ window.onload = function(){
                     "build", "mouth", "other", "who", "final"];
   typingPromptList = [];
   mainContainer = document.getElementById("mainContainer");
-  const wordForm = document.getElementById("wordForm");
+  const justTheWords = document.getElementById("justTheWords");
   const wordInput = document.getElementById("wordInput");
 
   for (let i = 0; i < 20; i++){
@@ -26,7 +26,7 @@ window.onload = function(){
 
     newParagraph.textContent = chosenWord;
 
-    mainContainer.insertBefore(newParagraph, wordForm);
+    justTheWords.appendChild(newParagraph);
 
     newParagraph.id = `word ${i}`;
 

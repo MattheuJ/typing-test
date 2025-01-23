@@ -16,7 +16,13 @@ body {
 }
 
 #mainContainer{
-    text-align: center;
     width: 200x;
     height: 100px;
+}
+
+#justTheWords{
+    background-color: rgb(70, 68, 68);
+    height: 300px;
+    border-radius: 10px;
+    text-align: center;
 }
