@@ -18,7 +18,7 @@ window.onload = function(){
   for (let i = 0; i < 20; i++){
     chosenWord = wordList[getRandomInt(50)];
 
-    console.log(chosenWord)
+    console.log(chosenWord);
 
     typingPromptList.push(chosenWord);
 
@@ -36,8 +36,9 @@ window.onload = function(){
 
   counter = 0;
   currentWordElement = document.getElementById(`word ${counter}`);
-
+  
   wordInput.addEventListener("keypress", function(event){
+
     if (event.key == " ") {
       userInput = event.target.value;
       console.log(`${userInput} (user)`);
@@ -52,12 +53,12 @@ window.onload = function(){
 
       if (userInput == typingPromptList[counter]) {
         currentWordElement.style.color = "green";
-        counter = counter + 1
+        counter = counter + 1;
         currentWordElement = document.getElementById(`word ${counter}`);
         
       } else {
         currentWordElement.style.color = "red";
-        counter = counter + 1
+        counter = counter + 1;
         currentWordElement = document.getElementById(`word ${counter}`);
       }
 
