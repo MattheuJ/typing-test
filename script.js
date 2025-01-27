@@ -39,6 +39,10 @@ window.onload = function(){
   
   wordInput.addEventListener("keypress", function(event){
 
+    if (event.key == 'Enter'){
+      event.preventDefault();
+    }
+
     if (event.key == " ") {
       userInput = event.target.value;
       console.log(`${userInput} (user)`);
