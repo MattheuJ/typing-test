@@ -9,14 +9,18 @@ window.onload = function(){
                     "take", "place", "scare", "half", "fun",
                     "learn", "small", "question", "where", "is",
                     "research", "survive", "test", "internet", "use",
-                    "build", "mouth", "other", "who", "final"];
+                    "build", "mouth", "other", "who", "final", 
+                    "model", "value", "up", "down", "cute",
+                    "thing", "two", "one", "hand", "share",
+                    "love", "moment", "work", "fake", "back"];
   typingPromptList = [];
   mainContainer = document.getElementById("mainContainer");
   const justTheWords = document.getElementById("justTheWords");
   const wordInput = document.getElementById("wordInput");
+  const timer = document.getElementById("timer");
 
   for (let i = 0; i < 20; i++){
-    chosenWord = wordList[getRandomInt(50)];
+    chosenWord = wordList[getRandomInt(65)];
 
     console.log(chosenWord);
 
@@ -74,4 +78,12 @@ window.onload = function(){
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
+}
+
+function startTimer(timeSelected){
+
+}
+
+function generateNewWords(){
+  
 }
